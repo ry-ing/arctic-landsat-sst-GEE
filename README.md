@@ -32,12 +32,16 @@ Set the visualisation SST range for the scene displayed on the screen.
 **Step 6: Inspector**
 Click anywhere on the screen to view the SST value of the choosen pixel
 
+![image](https://github.com/ry-ing/arctic-landsat-sst-GEE/blob/main/img/gee_screenshot1.png)
+
 **Step 7 & 8. Time-series Analysis**
 The step allows the user to generate a timeseries of SST for a chosen year range. A figure of monthly aggregates is also generated. This data can be directly downloaded as a CSV file. 
+
+![image](https://github.com/ry-ing/arctic-landsat-sst-GEE/blob/main/img/gee_screenshot2.png)
 
 ### How to use the app (with google drive export feature):
 To export scenes of Landsat-derived SST, the app needs to be run in the Google Earth Engine console. To do this users will need to sign up for a Google Earth Engine account and a Google cloud project. This can be done here: https://earthengine.google.com/signup/. 
 
 After signing up for a GEE account, you should be able to access the console-version of the web app here: https://code.earthengine.google.com/f96545829b6e11b929a07eb3cf13901b. After clicking on the link, press "**Run**", and the app will load. The "Export Scene to Drive" button will now work and export scenes to your Google Drive. 
 
-![image](https://github.com/ry-ing/arctic-landsat-sst-GEE/img/gee_screenshot3.png)
+![image](https://github.com/ry-ing/arctic-landsat-sst-GEE/blob/main/img/gee_screenshot3.png)

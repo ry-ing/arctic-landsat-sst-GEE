@@ -19,6 +19,9 @@ build/
 env/
 venv/
 
+# Claude Code internal files
+CLAUDE.md
+
 # IDE
 .vscode/
 .idea/
