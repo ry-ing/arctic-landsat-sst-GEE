@@ -10,7 +10,7 @@ This repository provides example code for the python version utilising the Googl
 A more accessible, user-friendly, Google Earth Engine app is detailed below.
 
 ## Google Earth Engine App
-A web app has been designed to allow users to view and create timeseries of Landsat-derived SST optimised for the Arctic. This web app is available here: ()
+A web app has been designed to allow users to view and create timeseries of Landsat-derived SST optimised for the Arctic. This web app is available here: (https://ryan-ing.projects.earthengine.app/view/arctic-landsat-sst-viewer)
 
 ### How to use the app:
 
