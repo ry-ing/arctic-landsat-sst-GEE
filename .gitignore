@@ -13,6 +13,9 @@ build/
 .ipynb_checkpoints/
 *.ipynb_checkpoints
 
+# directory GEE_scripts
+GEE_scripts/
+
 # Environments
 .env
 .venv
