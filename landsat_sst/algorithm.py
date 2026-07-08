@@ -1,14 +1,10 @@
 """
-Landsat SST retrieval — interaction-term algorithm.
-
-Algorithm (from derive_SST-COEFFS-main.py):
+Landsat SST retrieval 
+Algorithm:
   Tb_scaled   = (Tb_K  - MEDIAN[0]) / IQR[0]    [RobustScaler on Tb]
   TCWV_scaled = (TCWV  - MEDIAN[1]) / IQR[1]    [RobustScaler on TCWV]
   SST_K       = A * Tb_scaled + B * (Tb_scaled * TCWV_scaled) + Intercept + D
   SST_C       = SST_K - 273.15
-
-B is negative for all sensors: the interaction term applies a small downward
-correction when both Tb and TCWV are large (humid warm-air overestimation).
 """
 
 import ee
@@ -18,17 +14,6 @@ from .params import COEFFS, SCALER_PARAMS, TIR_BANDS
 def add_sst_band(sensor):
     """
     Return a map function that appends 'SST' (°C) and 'bt_K' (K) bands.
-
-    Usage::
-
-        collection = collection.map(add_sst_band('L8'))
-
-    The image must already have the primary TOA thermal band and a 'TCWV'
-    band (added by merra.add_tcwv_band).
-
-    Args:
-        sensor: str — one of 'L4', 'L5', 'L7', 'L8', 'L9'.
-
     Returns:
         Callable[[ee.Image], ee.Image]
     """
@@ -51,7 +36,6 @@ def add_sst_band(sensor):
         tb_scaled   = tb.subtract(median_tb).divide(iqr_tb)
         tcwv_scaled = tcwv.subtract(median_tcwv).divide(iqr_tcwv)
 
-        # Interaction term and SST in Kelvin
         interaction = tb_scaled.multiply(tcwv_scaled)
         sst_kelvin  = (tb_scaled.multiply(a)
                                 .add(interaction.multiply(b))

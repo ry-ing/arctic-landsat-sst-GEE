@@ -1,9 +1,5 @@
 """
 QA_PIXEL-based water masking for Landsat Collection 2.
-
-The comprehensive mask here matches exactly what the Python training pipeline
-(get_INSITU-LANDSAT-PAIRS.py) used when building the in-situ matchup dataset,
-so training and inference see the same pixel population.
 """
 
 import ee
@@ -19,12 +15,6 @@ def build_water_mask(qa, sensor):
       - AND cloud/shadow/snow confidence < 'medium' (bits 8-13 < 2)
       - AND for L8/L9: free of cirrus (bit 2, bits 14-15)
 
-    Args:
-        qa:     ee.Image — the QA_PIXEL band from a Collection 2 Level-2 image.
-        sensor: str — one of 'L4', 'L5', 'L7', 'L8', 'L9'.
-
-    Returns:
-        ee.Image — single-band binary mask.
     """
     is_water = qa.bitwiseAnd(1 << 7).neq(0)
 
@@ -50,18 +40,5 @@ def build_water_mask(qa, sensor):
 
 
 def apply_water_mask(image, sensor):
-    """
-    Apply the comprehensive water mask to an image.
-
-    Convenience wrapper around build_water_mask that updates the image mask
-    in-place. Equivalent to image.updateMask(build_water_mask(qa, sensor)).
-
-    Args:
-        image:  ee.Image — must contain a 'QA_PIXEL' band.
-        sensor: str — one of 'L4', 'L5', 'L7', 'L8', 'L9'.
-
-    Returns:
-        ee.Image — same image with mask applied.
-    """
     qa = image.select('QA_PIXEL')
     return image.updateMask(build_water_mask(qa, sensor))

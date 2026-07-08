@@ -1,16 +1,13 @@
 """
-Main Landsat SST collection builder — Python equivalent of Landsat_SST.js.
+Main Landsat SST collection builder 
 
-Combines Landsat Level-2 SR (for QA_PIXEL and optical bands) with Level-1 TOA
-(for brightness temperature), adds MERRA-2 TCWV, scales SR optical bands, and
-computes the optimised SST via the interaction-term algorithm.
 """
 
 import ee
 from .algorithm import add_sst_band
 from .merra import add_tcwv_band
 
-# Collection-2 Tier-1 asset IDs and band lists per sensor
+# Collection-2 Tier-1 
 COLLECTION_INFO = {
     'L4': {
         'TOA': 'LANDSAT/LT04/C02/T1_TOA',
@@ -33,7 +30,7 @@ COLLECTION_INFO = {
     'L8': {
         'TOA': 'LANDSAT/LC08/C02/T1_TOA',
         'SR':  'LANDSAT/LC08/C02/T1_L2',
-        'TIR': ['B10'],         # B11 excluded (single-channel retrieval)
+        'TIR': ['B10'],         
         'SR_BANDS': ['SR_B1', 'SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B6', 'SR_B7', 'QA_PIXEL'],
     },
     'L9': {
@@ -44,7 +41,7 @@ COLLECTION_INFO = {
     },
 }
 
-# True-colour RGB band triplets per sensor (after SR scaling)
+
 RGB_BANDS = {
     'L4': ['SR_B3', 'SR_B2', 'SR_B1'],
     'L5': ['SR_B3', 'SR_B2', 'SR_B1'],
@@ -63,20 +60,14 @@ def _scale_sr(image):
 
 def get_collection(sensor, start_date, end_date, geometry):
     """
-    Build an SST ImageCollection for the given sensor and spatio-temporal filter.
+    Build an SST ImageCollection for the given sensor and filter.
 
-    The returned collection has (at minimum) these bands on every image:
+    The returned collection has these bands on every image:
       SST    — sea surface temperature (°C), all pixels
       bt_K   — brightness temperature (K) of the primary thermal band
       TCWV   — total column water vapour (kg m⁻²) from MERRA-2
       QA_PIXEL — raw Landsat quality bitmask (for masking downstream)
       SR_B*  — scaled surface reflectance (reflectance units, 0–1)
-
-    Args:
-        sensor:     str  — one of 'L4', 'L5', 'L7', 'L8', 'L9'.
-        start_date: str or ee.Date — e.g. '2022-07-01'.
-        end_date:   str or ee.Date — e.g. '2022-08-01'.
-        geometry:   ee.Geometry — spatial filter / area of interest.
 
     Returns:
         ee.ImageCollection

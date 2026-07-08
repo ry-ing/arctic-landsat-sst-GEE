@@ -1,10 +1,9 @@
 """
-MERRA-2 total column water vapour (TCWV) integration.
+MERRA-2 total column water vapour (TCWV)
 
 Adds the closest-in-time MERRA-2 TQV band to a Landsat image within a ±1-hour
 window, bilinearly resampled to the Landsat 30 m grid.  Returns a constant
--999 image if no MERRA-2 granule is found (sentinel value — not physically
-plausible, so downstream QC can detect it if needed).
+-999 image if no MERRA-2 granule is found 
 """
 
 import ee
@@ -18,11 +17,8 @@ def add_tcwv_band(image):
     Map function: adds a 'TCWV' band (kg m⁻²) to a Landsat image.
 
     Finds the MERRA-2 image closest in time to the Landsat overpass within
-    ±1 hour, reprojects it to the Landsat native grid, and appends it as
+    ±1 hour, reprojects it to the Landsat scene, and adds it as
     the 'TCWV' band.
-
-    Args:
-        image: ee.Image — a single Landsat image.
 
     Returns:
         ee.Image — input image with 'TCWV' band added.

@@ -1,15 +1,6 @@
 """
 Algorithm coefficients and RobustScaler parameters.
 
-Source: python_scripts_to_derive_Algorithm/algorithm_params/MASTER_ALGORITHM_PARAMETERS.csv
-Algorithm: SST_K = A * Tb_scaled + B * (Tb_scaled * TCWV_scaled) + Intercept + D
-  Tb_scaled   = (Tb_K  - Scaler_Tb_Center)   / Scaler_Tb_Scale   [RobustScaler]
-  TCWV_scaled = (TQV   - Scaler_TCWV_Center) / Scaler_TCWV_Scale
-  A, B, Intercept: from libRadtran radiative-transfer simulations
-  D: bias correction from 5-fold cross-validation on EasyCORA in-situ data
-
-Note: L4 borrows L5's D (no L4 in-situ validation data; both are identical TM sensors).
-Note: TCWV scaler is identical across sensors (derived from MERRA-2 distribution).
 """
 
 COEFFS = {
@@ -47,7 +38,6 @@ COEFFS = {
 
 # RobustScaler parameters: MEDIAN = center_ (median), IQR = scale_ (IQR)
 # Order: [Tb (K), TCWV (kg m⁻²)]
-# TCWV parameters are sensor-independent.
 SCALER_PARAMS = {
     'L4': {
         'MEDIAN': [274.58207742866665,  10.624123096466064],
