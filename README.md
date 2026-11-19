@@ -1,9 +1,8 @@
 # Landsat-derived Arctic-optimised Sea Surface Temperature
-**If you use this code and method please cite the following reference:**
 
-Ing, R., Nienow, P., Slater, D., Medina-Lopez, E. (in review). Investigating the use of Landsat-derived Sea Surface Temperatures as a proxy for changes in ocean forcing of Greenland’s marine-terminating outlet glaciers. Journal of Glaciology.
+Ing R, Nienow P, Slater D, Medina-Lopez E. Investigating the use of Landsat-derived sea surface temperatures as a proxy for changes in ocean forcing of Greenland’s marine-terminating outlet glaciers. Journal of Glaciology. 2026;72:e75. doi:10.1017/jog.2026.10204
 
-The method used to derive and optimise the Landsat SST algorithm for Greenland coastal waters is explained in the above paper. The code used to derive the algorithm is available at: https://doi.org/10.5281/zenodo.20610025. The algorithm was trained on radiative transfer simulations for atmospheric profiles over Greenlandic coastal waters, however it has been shown through validation to work well for Arctic coastal waters in general. 
+The method used to derive and optimise the Landsat SST algorithm for Greenland coastal waters is explained in the above paper. The code used to derive the algorithm is available at: https://doi.org/10.5281/zenodo.20610025. The algorithm was trained on radiative transfer simulations for atmospheric profiles over Greenlandic coastal waters.
 
 This repository provides example code for the python version utilising the Google Earth Engine Python API, with the main SST algorithm pipeline in "landsat_sst". **"Arctic_Landsat_SST_Demo.ipynb"** provides and example juypter notebook of how to view Landsat scenes and calculate SST.
 
@@ -18,7 +17,7 @@ A web app has been designed to allow users to view and create timeseries of Land
 Draw a rectangle over your chosen study area. A smaller geometry is preferred, as it avoids scenes that only partially cover your area of interest from being included. The clear geometry button allows the user to remove all drawn geometries.
 
 **Step 2: Define cloud cover**
-Set max cloud cover (%) of scenes. A smaller number (5 %) is preferred.
+Set max cloud cover (%) of scenes. A smaller number (5 %) works best.
 
 **Step 3: Choose Landsat scene**
 The app will now show all available scenes (1982 to present) with the applied geometry and cloud filters. Select an image to display it on the scene. 
