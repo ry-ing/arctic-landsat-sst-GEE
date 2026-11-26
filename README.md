@@ -49,7 +49,7 @@ After signing up for a GEE account, you should be able to access the console-ver
 
 ## How to cite
  
-If you use this code, the web app or their outputs to support results, please let me know and cite:
+If you use this code, the web app or their outputs to support results, please let me know ([ryan.ing@ed.ac.uk]) and cite:
  
 Ing R, Nienow P, Slater D, Medina-Lopez E. Investigating the use of Landsat-derived sea surface temperatures as a proxy for changes in ocean forcing of Greenland’s marine-terminating outlet glaciers. Journal of Glaciology. 2026;72:e75. doi:10.1017/jog.2026.10204
 
