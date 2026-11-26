@@ -1,5 +1,7 @@
 # Landsat-derived Arctic-optimised Sea Surface Temperature
 
+_Update 26/11/2026: Fixed reversed colormap and scaling issue, added colorbar to webapp._
+  
 Ing R, Nienow P, Slater D, Medina-Lopez E. Investigating the use of Landsat-derived sea surface temperatures as a proxy for changes in ocean forcing of Greenland’s marine-terminating outlet glaciers. Journal of Glaciology. 2026;72:e75. doi:10.1017/jog.2026.10204
 
 The method used to derive and optimise the Landsat SST algorithm for Greenland coastal waters is explained in the above paper. The code used to derive the algorithm is available at: https://doi.org/10.5281/zenodo.20610025. The algorithm was trained on radiative transfer simulations for atmospheric profiles over Greenlandic coastal waters.
