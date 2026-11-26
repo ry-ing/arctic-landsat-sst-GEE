@@ -46,3 +46,11 @@ To export scenes of Landsat-derived SST, the app needs to be run in the Google E
 After signing up for a GEE account, you should be able to access the console-version of the web app here: [https://code.earthengine.google.com/f96545829b6e11b929a07eb3cf13901b](https://code.earthengine.google.com/729472942be7b973c7f65ebeb90fa1d1). After clicking on the link, press "**Run**", and the app will load. The "Export Scene to Drive" button will now work and export scenes to your Google Drive. 
 
 ![image](https://github.com/ry-ing/arctic-landsat-sst-GEE/blob/main/img/gee_screenshot3.png)
+
+## How to cite
+ 
+If you use this code, the web app or their outputs to support results, please let me know and cite:
+ 
+Ing R, Nienow P, Slater D, Medina-Lopez E. Investigating the use of Landsat-derived sea surface temperatures as a proxy for changes in ocean forcing of Greenland’s marine-terminating outlet glaciers. Journal of Glaciology. 2026;72:e75. doi:10.1017/jog.2026.10204
+
+If the data are crucial to the manuscript, I would appreciate being informed at an early stage.
