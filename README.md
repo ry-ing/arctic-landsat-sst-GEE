@@ -43,7 +43,7 @@ The step allows the user to generate a timeseries of SST for a chosen year range
 ### How to use the app (with google drive export feature):
 To export scenes of Landsat-derived SST, the app needs to be run in the Google Earth Engine console. To do this users will need to sign up for a Google Earth Engine account and a Google cloud project. This can be done here: https://earthengine.google.com/signup/. 
 
-After signing up for a GEE account, you should be able to access the console-version of the web app here: [https://code.earthengine.google.com/f96545829b6e11b929a07eb3cf13901b](https://code.earthengine.google.com/729472942be7b973c7f65ebeb90fa1d1). After clicking on the link, press "**Run**", and the app will load. The "Export Scene to Drive" button will now work and export scenes to your Google Drive. 
+After signing up for a GEE account, you should be able to access the console-version of the web app here: [https://code.earthengine.google.com/8f5ff22fb7fa1b423bae03c3f6af34d9](https://code.earthengine.google.com/8f5ff22fb7fa1b423bae03c3f6af34d9). After clicking on the link, press "**Run**", and the app will load. The "Export Scene to Drive" button will now work and export scenes to your Google Drive. 
 
 ![image](https://github.com/ry-ing/arctic-landsat-sst-GEE/blob/main/img/gee_screenshot3.png)
 
